@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Todo } from './todos/todos.entity';
 import { TodosModule } from './todos/todos.module';
 
 @Module({
@@ -17,7 +18,7 @@ import { TodosModule } from './todos/todos.module';
 			username: process.env.POSTGRES_USER,
 			password: process.env.POSTGRES_PASSWORD,
 			database: process.env.POSTGRES_DB,
-			entities: [],
+			entities: [Todo],
 			synchronize: true,
 		}),
 		TodosModule,
