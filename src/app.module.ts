@@ -16,7 +16,9 @@ import { TodosModule } from './todos/todos.module';
 			url: process.env.DATABASE_URL,
 			entities: [Todo],
 			synchronize: true,
-			ssl: true
+			ssl: {
+				rejectUnauthorized: false,
+			}
 		}),
 		TodosModule,
 	]
