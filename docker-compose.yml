@@ -18,7 +18,7 @@ services:
     ports:
       - '7000:7000'
     volumes:
-      - ./src:/src
+      - ./src:/usr/src/app/src
     depends_on:
       - db
 
